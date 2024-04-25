@@ -10,9 +10,8 @@
 :root {
   font-family: 'JetBrains Mono', monospace;
   line-height: 1.1;
-  font-weight: 600;
+  font-weight: 200;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;

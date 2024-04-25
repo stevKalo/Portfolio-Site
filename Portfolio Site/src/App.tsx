@@ -2,26 +2,25 @@ import { useState } from 'react';
 import cracked from './assets/images/mobile/Mobile-47.jpg';
 import './App.css';
 import NavBar from './components/NavBar';
+import MovingText from './components/MovingText';
+import MainLinks from './components/MainLinks';
 
 function App() {
   const [bg1, setBg1] = useState(0);
   const [bg2, setBg2] = useState(0);
   const [bg3, setBg3] = useState(0);
 
-  // mouseover link word
-  // change opacity of bg div with similar id
-
-  function handleMouseEnter(e: React.MouseEvent<HTMLSpanElement>) {
+  function handleMouseEnter(e: React.MouseEvent<HTMLLIElement>) {
     if (e.target.id === 'developer') {
-      setBg1(1);
+      setBg1(0.7);
     } else if (e.target.id === 'photographer') {
-      setBg2(1);
+      setBg2(0.7);
     } else if (e.target.id === 'pilot') {
-      setBg3(1);
+      setBg3(0.7);
     }
   }
 
-  function handleMouseLeave(e: React.MouseEvent<HTMLSpanElement>) {
+  function handleMouseLeave(e: React.MouseEvent<HTMLLIElement>) {
     if (e.target.id === 'developer') {
       setBg1(0);
     } else if (e.target.id === 'photographer') {
@@ -42,44 +41,18 @@ function App() {
       <NavBar onClick={handleClick} />
       <div className='container'>
         <p className='intro'>
-          My name is <span className='name'>Stephen Kalogridis</span>.
-          <br />I{' '}
-          <span
-            id='developer'
-            className='link'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
-          >
-            Make Websites
-          </span>
-          ,{' '}
-          <span
-            id='photographer'
-            className='link'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
-          >
-            Take Photos
-          </span>
-          , and{' '}
-          <span
-            id='pilot'
-            className='link'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
-          >
-            Fly Drones
-          </span>
-          .
+          Hi, my name is
+          <br />
+          Stephen Kalogridis. I'm a
         </p>
-        <div
-          className='background'
-          id='developer-bg'
-          style={{ opacity: bg1 }}
-        ></div>
+        <MainLinks
+          onClick={handleClick}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+        <div className='background' id='developer-bg' style={{ opacity: bg1 }}>
+          <MovingText />
+        </div>
         <div
           className='background'
           id='photographer-bg'
