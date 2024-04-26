@@ -6,7 +6,7 @@ export default function MainLinks(props: any) {
         id='developer'
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}
-        onClick={props.handleClick}
+        onClick={props.onClick}
       >
         Web Developer
       </li>
@@ -15,7 +15,7 @@ export default function MainLinks(props: any) {
         id='photographer'
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}
-        onClick={props.handleClick}
+        onClick={props.onClick}
       >
         Photographer
       </li>
@@ -24,7 +24,7 @@ export default function MainLinks(props: any) {
         id='pilot'
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}
-        onClick={props.handleClick}
+        onClick={props.onClick}
       >
         Drone Pilot
       </li>
